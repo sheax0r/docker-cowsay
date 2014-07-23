@@ -7,11 +7,11 @@ Probably the most useless docker container ever invented.
 git clone https://github.com/sheax0r/docker-cowsay.git
 cd docker-cowsay
 docker build -t cowsay .
-``
+```
 ## Usage
 ```bash
 docker run cowsay STUFF FOR THE COW TO SAY
-end
+```
 
 ## Contributing
 
