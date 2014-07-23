@@ -9,8 +9,21 @@ cd docker-cowsay
 docker build -t cowsay .
 ```
 ## Usage
+Input:
 ```bash
-docker run cowsay STUFF FOR THE COW TO SAY
+docker run cowsay I LOVE COWS
+```
+
+Output:
+```
+ _____________
+< I LOVE COWS >
+ -------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 ```
 
 ## Contributing
