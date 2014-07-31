@@ -28,6 +28,6 @@ class Cow
   end
 
   def say(string)
-    `cowsay #{Shellwords.escape(string)}`
+    `cowsay -f #{name} #{Shellwords.escape(string)}`
   end
 end
