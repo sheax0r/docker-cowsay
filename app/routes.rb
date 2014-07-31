@@ -4,6 +4,10 @@ require 'sinatra'
 
 set :bind, ENV.fetch('ADDRESS', '0.0.0.0')
 
+before do
+  content_type 'text/plain'
+end
+
 get '/' do
   "".tap do |str|
     Cow.all.each{|c| str << "#{c.name}\n"}
