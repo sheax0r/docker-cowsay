@@ -10,4 +10,4 @@ RUN cd /app && bundle update
 
 ADD run.sh /run.sh
 
-CMD ["/run.sh"]
+ENTRYPOINT ["/run.sh"]
