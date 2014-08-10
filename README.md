@@ -4,7 +4,7 @@ Docker-cowsay runs an HTTP API that exposes cowsay operations.
 Make cows say things, just like you always wanted to!
 
 ## Prerequisites
-To build docker-cowsay from source, I recommend (http://www.fig.sh/)[fig], but you can get by just with docker.
+To build docker-cowsay from source, I recommend [fig](http://www.fig.sh), but you can get by just with docker.
 
 ### Building and running with fig
 This method will automatically forward port 80 on your host machine to port 80 on the docker container.
