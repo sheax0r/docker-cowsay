@@ -4,7 +4,7 @@ class Cow
   class << self
     def all
       lines = `cowsay -l`.split("\n")
-      [].tap do |cows|
+      [DefaultCow.new].tap do |cows|
         lines[1..-1].each do |line|
           line.split.each do |c|
             cows << Cow.new(c)
@@ -29,5 +29,15 @@ class Cow
 
   def say(string)
     `cowsay -f #{name} #{Shellwords.escape(string)}`
+  end
+end
+
+class DefaultCow
+  def name
+    'cow'
+  end
+
+  def say(string)
+    `cowsay #{Shellwords.escape(string)}`
   end
 end
