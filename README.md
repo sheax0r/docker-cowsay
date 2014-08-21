@@ -1,7 +1,6 @@
 # Docker Cowsay
-Possibly the most useless docker image in existence!
 Docker-cowsay runs an HTTP API that exposes cowsay operations.
-Make cows say things, just like you always wanted to!
+Make cows say things, just like you always wanted to - over the internets!
 
 ## Prerequisites
 To build docker-cowsay from source, I recommend [fig](http://www.fig.sh), but you can get by just with docker.
