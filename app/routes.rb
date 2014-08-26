@@ -25,7 +25,7 @@ get '/fb/:name/:say' do
   <<-eos
   <html>
     <body>
-      <img style="padding-left:30px" href="#{request.host}/#{params[:name]}/#{params[:say]}" />
+      <img style="padding-left:30px" href="#{request.scheme}://#{request.host}/#{params[:name]}/#{params[:say]}?format=png" />
     </body>
   </html>
   eos
