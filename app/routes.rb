@@ -37,8 +37,6 @@ def convert (string, params)
     if %w'jpg gif png'.include?(format)
 
       content_type "image/#{format}"
-      puts "params: #{params}"
-      puts "CMD: convert #{dimensions(params)} label:"#{Shellwords.escape(string)}" #{format}:-"
       `convert #{dimensions(params)} label:"#{Shellwords.escape(string)}" #{format}:-`
     end
   else
