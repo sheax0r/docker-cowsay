@@ -20,6 +20,17 @@ get '/:name/:say' do
   convert(cow ? cow.say(params[:say]) : halt(404, "No such cow: #{params[:name]}"), params)
 end
 
+get '/fb/:name/:say' do
+  content_type 'text/html'
+  <<-eos
+  <html>
+    <body>
+      <img style="padding-left:30px" href="#{request.host}/#{params[:name]}/#{params[:say]}" />
+    </body>
+  </html>
+  eos
+end
+
 def convert (string, params)
   format = params[:format]
   if format
