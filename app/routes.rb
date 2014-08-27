@@ -35,9 +35,16 @@ def convert (string, params)
   format = params[:format]
   if format
     if %w'jpg gif png'.include?(format)
-
       content_type "image/#{format}"
-      `convert #{dimensions(params)} label:"#{Shellwords.escape(string)}" #{format}:-`
+      f = Tempfile.new('cow')
+      begin
+        f.write(string)
+        f.rewind
+        `convert -font Courier #{dimensions(params)} label:@#{f.path} #{format}:-`
+      ensure
+        f.close
+        f.unlink
+      end
     end
   else
     string
