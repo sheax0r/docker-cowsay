@@ -40,7 +40,7 @@ def convert (string, params)
       begin
         f.write(string)
         f.rewind
-        `convert -font fixed #{dimensions(params)} label:@#{f.path} #{format}:-`
+        `convert -font Courier #{dimensions(params)} label:@#{f.path} #{format}:-`
       ensure
         f.close
         f.unlink
