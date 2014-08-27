@@ -36,11 +36,12 @@ def convert (string, params)
   if format
     if %w'jpg gif png'.include?(format)
       content_type "image/#{format}"
-
-      Tempfile.new('cow') do |f|
+      f = Tempfile.new('cow')
+      begin
         f.write(string)
         f.rewind
         `convert #{dimensions(params)} label:@#{f.path} #{format}:-`
+      ensure
         f.close
         f.unlink
       end
