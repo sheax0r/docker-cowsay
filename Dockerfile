@@ -6,6 +6,7 @@ RUN curl -L get.rvm.io | bash -s stable
 RUN gem install --no-ri --no-rdoc bundle
 
 RUN yum install -y ImageMagick && yum clean all 
+RUN gem install lolcat
 
 ADD app /app
 RUN cd /app && bundle update
@@ -13,3 +14,5 @@ RUN cd /app && bundle update
 ADD run.sh /run.sh
 
 ENTRYPOINT ["/run.sh"]
+
+EXPOSE 80
