@@ -4,8 +4,7 @@ set -o nounset
 
 if [ "$#" -eq 0 ]; then
   export PORT=80
-  cd /app
-  exec bundle exec ruby routes.rb
+  exec cowsapi
 else
   if [ "$1" = "--lol" ]; then
     /usr/bin/cowsay ${@:2:$#} | lolcat -f
