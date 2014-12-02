@@ -20,6 +20,6 @@ RUN /bin/bash -l -c "gem install --no-ri --no-rdoc cowsapi --version 0.1.1"
 
 # Get ready to run it
 ADD run.sh /run.sh
-ENTRYPOINT ["bash -l -c '/run.sh'"]
+ENTRYPOINT ["/run.sh"]
 EXPOSE 80
 
