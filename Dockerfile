@@ -16,7 +16,10 @@ RUN /bin/bash -l -c "rvm install 2.0"
 # Hack to deal with rubygems DDOS - remove this!
 RUN echo -ne "\n54.186.104.15 api.rubygems.org" >> /etc/hosts
 RUN /bin/bash -l -c "gem install --no-ri --no-rdoc bundler"
-RUN /bin/bash -l -c "gem install --no-ri --no-rdoc cowsapi --version 0.1.1"
+
+# Install it.
+RUN curl -L https://github.com/sheax0r/cowsapi/archive/v0.1.1.tar.gz | tar czvf -
+RUN cd /cowsapi && bundle install
 
 # Get ready to run it
 ADD run.sh /run.sh
