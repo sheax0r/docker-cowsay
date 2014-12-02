@@ -20,7 +20,7 @@ RUN /bin/bash -l -c "gem install --no-ri --no-rdoc bundler"
 # Install it.
 RUN curl -L https://github.com/sheax0r/cowsapi/archive/v0.1.1.tar.gz | tar xz
 RUN ln -s /cowsapi-0.1.1 /cowsapi
-RUN cd /cowsapi && bundle install
+RUN cd /cowsapi && bash -l -c "bundle install"
 
 # Get ready to run it
 ADD run.sh /run.sh
